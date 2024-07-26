@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogpost</title>
+</head>
+<style>
+    body{
+        background-color: #f0f0f0;
+    }
+    form{
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding: 61px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input{
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"]{
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover{
+        background-color: #0056b3;
+    }
+    input[type="file"]{
+        padding: 0;
+    }
+    .form-control-file{
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn{
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background-color: #0056b3;
+    }
+  
+</style>
+<body>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+          <input type="text" name="title" placeholder="title">
+          <input type="text" name="categories" placeholder="categories">
+          <input type="text" name="tags" placeholder="tags">
+          <input type="text" name="content" placeholder="content">
+          <input type="file" class="form-control-file" name="myFile">
+          <input type="submit" value="Get me the stats!" class="btn btn-default">
+      </form>
+</body>
+</html>

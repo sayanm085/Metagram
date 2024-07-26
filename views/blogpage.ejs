@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+
+        body{
+            background-color: #f0f0f0;
+        }
+        .main{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+        }
+        .one{
+            width: 90%;
+            display: flex;
+
+        }
+        .two{
+            width: 90%;
+            margin-top: 20px;
+        }
+        .three{
+            width: 90%;
+            margin-top: 20px;
+        }
+        h1{
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        p{
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .logout{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout:hover{
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <a href="/logout"><button class="logout">Logout</button></a>
+    
+     <div class="main">
+        <img src="" alt="">
+        <div class="one">
+            <p>food</p>
+            <p style="margin-left: 30px;"></p>
+        </div >
+        <div class="two">
+            <h1>food reviews docomaent</h1>
+            <p>food cons</p>
+        </div>
+        
+        <div class="three">
+            <p>Date :-> 03/07/2024</p>
+        </div>
+        
+
+    </div>
+
+    <script>
+        
+
+        let info = async () => {
+            let res = await fetch('http://localhost:8000/blogdata');
+            let data = await res.json();
+            console.log(data);
+            data.forEach((item) => {
+               let main = document.createElement('div');
+                main.classList.add('main');
+                let img = document.createElement('img');
+                img.src = item.coverImage                ;
+                let one = document.createElement('div');
+                one.classList.add('one');
+                let p1 = document.createElement('p');
+                p1.textContent = item.tags                ;
+                let p2 = document.createElement('p');
+                p2.textContent = item.category;
+                let two = document.createElement('div');
+                two.classList.add('two');
+                let h1 = document.createElement('h1');
+                h1.textContent = item.title;
+                let p3 = document.createElement('p');
+                p3.textContent = item.content;
+                let three = document.createElement('div');
+                three.classList.add('three');
+                let p4 = document.createElement('p');
+                p4.textContent = item.date;
+                document.body.append(main);
+                main.append(img, one, two, three);
+                two.append(h1, p3);
+                one.append(p1, p2);
+            });
+        }
+        info();
+    </script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matagram</title>
+    <link rel="stylesheet" href="/css/mainpage.css">
+    <script src="https://kit.fontawesome.com/f74ecaf58e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main-createpost-box">
+    <div class="createpost-box">
+      <div class="createpost-head-box">
+        <p>Create Post</p>
+        <div class="xmark close-createpost">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        
+      </div>
+      <form action="/createpost" enctype="multipart/form-data" method="post">
+        <div class="Creator-post-setting-box">
+          <div class="Creator-pic-box">
+            <img src="/uploads/1711967051270.jpg" alt="">
+          </div>
+          <div class="Creator-name-box">
+            <p>Sayan Mondal</p>
+            <select name="posttype" id="">
+              <option value="public" selected >Public</option>
+              <option value="private">Private</option>
+              <option value="friends">Friends</option>
+            </select>
+          </div>
+         </div>
+  
+         <div class="textarea-box">
+          <textarea name="content" id="content" placeholder="What's on your mind, Sayan?" required></textarea>
+         </div>
+         <div class="hashtag-input-box">
+             <input type="text" id="hashtag" name="hashtag" class="hashtag" placeholder="#Beauty"> 
+         </div>
+
+         <!-- video/image upload box -->
+         <div class="image-video-input-box">
+          <label for="file" class="custum-file-upload">
+            <div class="icon1">
+            <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" fill=""></path> </g></svg>
+            </div>
+            <div class="text">
+               <span>Click to upload Image / Video</span>
+               </div>
+               <input id="file" type="file" name="imgvideofile" value="#" required>
+            </label>
+            
+         </div>
+
+          <!-- video/image upload box end -->
+  
+           <div class="createpost-input-box">
+               <div class="main-form-img-upload img-video-post-box">
+                 <i class="fa-regular fa-image"></i>
+                 <input type="file" name="file" id="file" class="file">
+                 <p>image/video</p>
+               </div>
+       
+               <div class="main-form-img-upload">
+                 <i class="fa-solid fa-paperclip" style="color: #FFD43B;"></i>
+                 <input type="file" name="file" id="file" class="file">
+                 <p>Attachment</p>
+               </div>
+               
+               <div class="main-form-img-upload">
+                 <i class="fa-solid fa-video" style="color: #ff4f4f;"></i>
+                 <input type="file" name="file" id="file" class="file">
+                 <p>Live</p>
+               </div>
+       
+       
+       
+               <div class="main-form-img-upload Hashtag-post-box">
+                 <i class="fa-solid fa-hashtag " style="color: #63E6BE;"></i>
+                 <input type="file" name="file" id="file" class="file">
+                 <p>Hashtag</p>
+               </div>
+  
+          </div>
+  
+          <div class="createpost-button-box">
+            <button>Post</button>
+          </div>
+      </form>
+    </div>
+  </div>
+    <nav>
+        <div class="logo">Metagram</div>
+        
+            <div class="InputContainer">
+                <input type="text" name="text" class="input" id="input" placeholder="Search">
+                
+                <label for="input" class="labelforsearch">
+              <svg viewBox="0 0 512 512" class="searchIcon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+              </label>
+              <div class="border"></div>
+              
+              <button class="micButton"><svg viewBox="0 0 384 512" class="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
+              </button>
+              
+            </div>
+     
+            <div class="nav-end-manu"> 
+                <div class="nav-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </div>   
+                  
+             <div class="nav-icon">
+                  <i class="fa-solid fa-bookmark"></i>
+             </div>
+
+             <div class="profile-nav-box">
+                    <div class="profile-nav">
+                        <img src="/uploads/1711967051270.jpg" alt="Sayan Mondal" class="profile-img">
+                    </div>
+                    <P>Sayan Mondal</P>
+                    <i class="fa-solid fa-angle-down"></i>
+             </div>
+            </div>
+            
+
+    </nav>
+    
+
+
+    <main>
+        <div class="main-container">
+
+
+<!-- main box left start -->
+        <div class="main-box-right-left  ">
+
+            <div class="main-profile-box   right-left-boxsize">
+                <!-- <div class="center-box"> -->
+                    <!-- part 1 -->
+                    <!-- <div class="pic-username">
+                        <div class="profile-pic-box">
+                          <img src="/uploads/1711967051270.jpg" alt=""> 
+                        </div>
+                        <div class="user-fullname-box">
+                            <p class="fullname">Sayan Mondal</p>
+                            <p class="username">@sayanTheCoder</p>
+                        </div>
+                    </div> -->
+                     <!-- part 2 -->
+                    <!-- <div class="main-flower-post-box">
+                        <div class="flower-box center">
+                            <p class="bold-text">22.2k</p>
+                            <p class="slim-text">Followers</p>
+                        </div> 
+                        <div class="following-box center ">
+                            <p class="bold-text">49</p>
+                            <p class="slim-text">Following</p>
+                            
+                        </div> -->
+                        <!-- <div class="post-box center">
+                            <p class="bold-text">108</p>
+                            <p class="slim-text">Posts</p>
+                        </div>
+                    </div> -->
+                <!-- </div>   -->
+            </div>
+
+            <div class="main-Option-box   right-left-boxsize">
+              <div class="main-center-option-box">
+
+                <button class="main-home-box" style="background-color: #90cfff67;">
+                  <i class="fa-solid fa-house" style="color: #00b3ff;"></i>
+                  <p >Home</p>
+                </button>
+              
+
+                <button class="main-home-box">
+                  <i class="fa-solid fa-user-group" style="color: #0080ff;"></i>
+                  <p >Friends</p>
+                </button>
+
+                <button class="main-home-box">
+                  <i class="fa-solid fa-clock-rotate-left" style="color: #3b96ff;"></i>
+                  <p  >watch Histroy</p>
+                </button>
+
+
+                <button class="main-home-box">
+                  <i class="fa-regular fa-thumbs-up" style="color: #005eff;"></i>
+                  <p >Like Content</p>
+                </button>
+
+                <button class="main-home-box">
+                  <i class="fa-regular fa-calendar-check" style="color: #a35dff;"></i>
+                  <p >Event</p>
+                </button>
+
+
+              </div>
+                    
+            </div>
+
+            
+
+        </div>
+
+
+<!-- main box middle start -->
+
+<div class="main-box-middle">
+
+    <div class="main-status-box">
+                    <div class="status-box">
+                         <div class="status-pic-box">
+                           <img src="/uploads/1711967051270.jpg" alt="">
+                         </div>
+                         <p class="status-name-box" >
+                            Your Story
+                         </p>
+                    </div>
+
+
+                    <div class="status-box">
+                        <div class="status-pic-box">
+                          <img src="/uploads/36.jpg" alt="">
+                        </div>
+                        <p class="status-name-box" >
+                           Your Story
+                        </p>
+                   </div>
+
+
+
+                   <div class="status-box">
+                    <div class="status-pic-box">
+                      <img src="/uploads/10.jpg" alt="">
+                    </div>
+                    <p class="status-name-box" >
+                       Your Story
+                    </p>
+               </div>
+
+
+               <div class="status-box">
+                <div class="status-pic-box">
+                  <img src="/uploads/21.jpg" alt="">
+                </div>
+                <p class="status-name-box" >
+                   Your Story
+                </p>
+           </div>
+
+
+           <div class="status-box">
+            <div class="status-pic-box">
+              <img src="/uploads/36.jpg" alt="">
+            </div>
+            <p class="status-name-box" >
+               Your Story
+            </p>
+       </div>
+
+
+       <div class="status-box">
+        <div class="status-pic-box">
+          <img src="/uploads/39.jpg" alt="">
+        </div>
+        <p class="status-name-box" >
+           Your Story
+        </p>
+   </div>
+
+
+   <div class="status-box">
+    <div class="status-pic-box">
+      <img src="/uploads/40.jpg" alt="">
+    </div>
+    <p class="status-name-box" >
+       Your Story
+    </p>
+</div>
+
+<div class="status-box">
+    <div class="status-pic-box">
+      <img src="/uploads/57.jpg" alt="">
+    </div>
+    <p class="status-name-box" >
+       Your Story
+    </p>
+</div>
+
+<div class="status-box">
+    <div class="status-pic-box">
+      <img src="/uploads/44.jpg" alt="">
+    </div>
+    <p class="status-name-box" >
+       Your Story
+    </p>
+</div>
+
+
+    </div>
+
+        <div class="main-upload-box">
+
+          <div class="from-post" >
+            <div class="from-up-side">
+
+              <div class="form-pic">
+                <img src="/uploads/1711967051270.jpg" alt="">
+              </div>
+
+              <div class="form-input open-post-box">
+                <input type="text" name="text" id="text" placeholder="What's on your mind?" readonly>
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+
+              <button class="open-post-box">Share Post</button>
+              
+            </div>
+
+            <div class="form-down-side">
+              <div class="from-input-main">
+                <div class="main-form-img-upload open-post-box">
+                  <i class="fa-regular fa-image"></i>
+                  <input type="file" name="file" id="file" class="file">
+                  <p>image/video</p>
+                </div>
+  
+                <div class="main-form-img-upload open-post-box">
+                  <i class="fa-solid fa-paperclip" style="color: #FFD43B;"></i>
+                  <input type="file" name="file" id="file" class="file">
+                  <p>Attachment</p>
+                </div>
+                
+                <div class="main-form-img-upload open-post-box">
+                  <i class="fa-solid fa-video" style="color: #ff4f4f;"></i>
+                  <input type="file" name="file" id="file" class="file">
+                  <p>Live</p>
+                </div>
+  
+  
+  
+                <div class="main-form-img-upload open-post-box">
+                  <i class="fa-solid fa-hashtag " style="color: #63E6BE;"></i>
+                  <input type="file" name="file" id="file" class="file">
+                  <p>Hashtag</p>
+                </div>
+
+              </div>
+              
+
+              <div class="upload-condition open-post-box">
+                <p>public</p>
+                <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+              </div>
+             
+            </div>
+            
+
+          </div>
+
+        </div>
+
+        
+
+
+        <div class="main-post-box">
+          <!-- <div class="main-center-post-box">//1
+
+            <div class="main-uploader-name-box">
+
+               <div class="main-pic-name-box">
+                <div class="main-uploader-pic">
+                  <img src="/uploads/1711967051270.jpg" alt="">
+                </div>
+  
+                <div class="main-uploader-name">
+                  <h6>Sayan Mondal</h6>
+                  <p>20 Aug to 6:30 AM</p>
+                </div>
+               </div>
+  
+
+               <div class="main-three-dot-box">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+
+            <div class="main-title-hastag-box">
+              <p>As the sun dips below the horizon on the shortest day of the year, it casts a golden glow across a serene snow-covered landscape.🌌🏕️</p>
+              <p style="color: #005eff;">#sun #programming #webdevelopment</p>
+            </div>
+            
+            <div class="main-post-image-video-box">
+              <img src="/uploads/pexels-jacub-gomez-447561-1143006.jpg" alt="">
+            </div> -->
+              
+            <!-- like-com-share bookmark box -->
+            <!-- <div class="main-like-com-share-etc-box">
+              <div class="main-like-com-share"> -->
+                <!-- like box -->
+                <!-- <div class="main-like-box">
+
+                  <button class="main-like-number-box">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    <p>${element.likes.likesNumber}</p>
+                    <p>Like</p>
+                  </button>
+                  
+                </div> -->
+
+                <!-- comment box -->
+                <!-- <div class="main-comment-box   main-like-box">
+                  <i class="fa-regular fa-comment   "></i>
+                  <div class="main-comment-number-box   main-like-number-box">
+                    <p>12</p>
+                    <p>Comment</p>
+                  </div>
+                </div> -->
+
+                <!-- share box -->
+                <!-- <div class="main-share-box  main-like-box">
+                  <i class="fa-solid fa-share-nodes"></i>
+                  <div class="main-share-number-box     main-like-number-box">
+                    <p>12</p>
+                    <p>Share</p>
+                  </div>
+                </div> -->
+                <!-- like-com-share box end -->
+
+              <!-- </div>
+
+              <div class="main-savecontent-box">
+                <i class="fa-regular fa-bookmark"></i>
+              </div>
+
+
+            </div>  -->
+
+            <!-- like-com-share bookmark box end-->
+
+             <!-- <div class="main-comment-post-box">
+                <div class="main-comment-user-pic-box">
+                  <img src="/uploads/1711967051270.jpg" alt="">
+                </div>
+  
+                <div class="main-comment-input-box">
+                  <input type="text" name="text" id="text" placeholder="Write a comment">
+                  <i class="fa-regular fa-face-smile"></i>
+                </div>
+             </div>
+            
+
+          </div> -->
+
+         </div>
+         
+
+
+
+    </div>
+
+
+
+
+            <!-- main box right start -->
+
+
+            <div class="main-box-right-left">
+
+                <div class="main-massages-box  right-left-boxsize ">
+                     
+                  <div class="main-massages-div-box">
+                    <div class="main-massages-box-title">
+                        <p>Massages</p>
+                        <i class="fa-regular fa-pen-to-square" style="color: #b5b5b5;"></i>
+                    </div>
+                    
+                    <div class="group">
+                      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                      <input placeholder="Search" type="search" class="message-search-input">
+                    </div>
+                    <div class="main-allmassages-box">
+
+                      <div class="main-option-selecter-msg-box">
+                        <button class="main-msg-button"> Primary</p></button>
+                        <button class="main-msg-button">Group</button>
+                        <button class="main-msg-button">Requests</button>
+                      </div>
+                      <div class="main-allusermag-box">
+
+                          <!-- 1st msg -->
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/1711967051270.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Sayan Mondal</h6>
+                            <div class="main-msg-time-text-prv">
+                              <p> me: Hey! How are you?</p>
+                              <li>6:30 AM</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 1st msg end -->
+
+
+                          <!-- 2nd msg -->
+                      
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/10.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Monika jons</h6>
+                            <div class="main-msg-time-text-prv">
+                              <p>Sent an Image</p>
+                              <li>today</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 2nd msg end -->
+
+
+                          <!-- 3rd msg -->
+                          
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/39.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Naha chan</h6>
+                            <div class="main-msg-time-text-prv">
+                              <p>Hey! How are you?</p>
+                              <li>11:52 PM</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 3rd msg end -->
+
+
+                          <!-- 4th msg -->
+                           
+                          
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/44.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Sonia lei</h6>
+                            <div class="main-msg-time-text-prv">
+                              <p>hay boy!!</p>
+                              <li>Yesterday</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 4th msg end -->
+
+
+                          <!-- 5th msg -->
+                            
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/36.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Jhon sina</h6>
+                            <div class="main-msg-time-text-prv">
+                              <p>me: Send Photo broo😁😁</p>
+                              <li>11:01 AM</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 5th msg end -->
+
+
+                        <!-- 6th msg -->
+                    
+                        <div class="main-usermsg">
+
+                          <div class="main-msg-user-pic">
+                            <img src="/uploads/40.jpg" alt="">
+                          </div>
+
+                          <div class="main-msg-user-name">
+                            <h6>Rohit </h6>
+                            <div class="main-msg-time-text-prv">
+                              <p>Bye bye bro 😁</p>
+                              <li>21/02/2024</li>
+                            </div>
+                          </div>
+
+                        </div>
+                         <!-- 6th msg end -->
+
+
+                         <div class="main-viwe-all-box">
+                            <p>View All</p>
+                         </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                    
+                </div>
+
+                
+
+              <div class="main-aichat-box right-left-boxsize">
+                <div class="main-center-aichat-box">
+
+
+                  <div class="main-aichat-pic-username-box">
+                    <div class="main-aichat-pic-box">
+                      <img src="/uploads/ai.png" alt="">
+                    </div>
+                    <div class="main-aichat-username-box">
+                      <h2>Welcome to AI Chat</h2>
+                      <p>Hey, Sayan</p>
+                    </div>
+                  </div>
+
+                  <div class="main-aichat-msg-box">
+                    <div class="main-recent-text-box">
+                      <p>Recent</p>
+                    </div>
+
+                    <div class="main-user-sendmsg-box">
+                      <p>Generate a vibrant and lively image depicting an elephant party in the heart of a lush, vibrant jungle.</p>
+                    </div>
+
+
+                    <div class="main-ai-sendmsg-box">
+                      <p>Sure, here is a vibrant and lively image depicting an elephant party in the heart of a lush, vibrant jungle:</p>
+                      
+
+                      <div class="grt-ai-img-box">
+                        <img src="/uploads/Gemini_Generated_Image_utdidzutdidzutdi.jpg" alt="">
+                        <img src="/uploads/Gemini_Generated_Image_utdie1utdie1utdi.jpg" alt="">
+
+                        <img src="/uploads/Gemini_Generated_Image_utdidzutdidzutdi.jpg" alt="">
+                        <img src="/uploads/Gemini_Generated_Image_utdidzutdidzutdi.jpg" alt="">
+                      </div>
+
+
+                      <p>Here is the image you requested. I hope you like it!</p>
+
+
+                    </div>
+                  </div>
+                 
+
+
+                  
+
+                </div>
+               </div> 
+                
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <script type="module" src="/js/main.frontend.js"></script>
+</body>
+</html>
