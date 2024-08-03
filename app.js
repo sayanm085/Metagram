@@ -160,6 +160,52 @@ app.get("/like/:postId", authenticateToken, async (req, res) => {
 
 
 
+app.get("/follow/:postId", authenticateToken, async (req, res) => {
+    const following = req.params.postId; //fetching the post id
+
+    let user= await User.findOne({username:req.user.username}); //fetching the user data
+    let followinguser = await User.findById(following); //fetching the following user data
+    let userfollowing = user.following.followingNumber; //fetching the following number
+    let followingBy = user.following.followingBy; //fetching the following by array
+    let followers = followinguser.followers.followerNumber; //fetching the followers number
+    let followerBy = followinguser.followers.followerBy; //fetching the follower by array
+    let index = followerBy.indexOf(user._id); //checking if the user has already followed the user
+    if (index === -1) { //if the user has not followed the user
+        userfollowing++;
+        followers++;
+        followingBy.push(following);
+        followerBy.push(user._id);
+    } else {//if the user has followed the user
+        userfollowing--;
+        followers--;
+        followingBy.splice(index, 1);
+        followerBy.splice(index, 1);
+    }
+
+
+    await User.findByIdAndUpdate (following, { "followers.followerNumber": followers, "followers.followerBy": followerBy }, { new: true }).then((i) => { //updating the followers number and follower by array
+        res.send({followers: i.followers, following: i.following , user:user._id});
+    }).catch((err) => {
+      console.log(err);
+      res.send("Error in following user");
+  }
+  );
+
+    await User.findByIdAndUpdate (user._id, { "following.followingNumber": userfollowing, "following.followingBy": followingBy }, { new: true }).then((i) => { //updating the following number and following by array
+     
+    }
+    ).catch((err) => {
+        console.log(err);
+        res.send("Error in following user");
+    });
+
+   
+
+   
+});
+
+
+
 
 app.get("/allposts",authenticateToken,async (req, res) => {
    let loggedinuser= req.user.id;

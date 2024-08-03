@@ -35,11 +35,11 @@ let usermainprofile= async()=>{
                                     </div>
                                     <div class="profile-user-follower-num profile-maindata">
                                         <p>Follower</p>
-                                        <p class="bold-text">${data.followers.length}</p>
+                                        <p class="bold-text">${data.followers.followerNumber}</p>
                                     </div>
                                     <div class="profule-user-following-num profile-maindata">
                                         <p>Following</p>
-                                        <p class="bold-text">${data.following.length}</p>
+                                        <p class="bold-text">${data.following.followingNumber}</p>
                                     </div>
                                    
                                 </div>

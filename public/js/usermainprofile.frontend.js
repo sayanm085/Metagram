@@ -23,11 +23,11 @@ let usermainprofile= async()=>{
                      <!-- part 2 -->
                     <div class="main-flower-post-box">
                         <div class="flower-box center">
-                            <p class="bold-text">${data.followers.length}</p>
+                            <p class="bold-text">${data.followers.followerNumber}</p>
                             <p class="slim-text">Followers</p>
                         </div> 
                         <div class="following-box center ">
-                            <p class="bold-text">${data.following.length}</p>
+                            <p class="bold-text">${data.following.followingNumber}</p>
                             <p class="slim-text">Following</p>
                             
                         </div>

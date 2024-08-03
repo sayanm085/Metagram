@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.profile-edit-container{
+    height: auto;
+    width: 85%;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.account-setting-box{
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1.7rem;
+}
+
+.profile-edit-box{
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.my-profile-box{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.profile-banner-edit-box{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+/*  banner start */
+.upload-files-container {
+	width: 60%;
+	display: flex;
+   	align-items: center;
+   	justify-content: center;
+	flex-direction: column;
+}
+
+.drag-file-area img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+}
+.relativ{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.325);
+    box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.325);
+    position: relative;
+    z-index: 10;
+    top: -201.3px;
+
+}
+.drag-file-area {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.504);
+	border-radius: 8px;
+    width: 100%;
+    height: 200px;
+	text-align: center;
+    
+}
+
+.drag-file-area .upload-icon {
+	font-size: 50px;
+    color: #ffffff;
+}
+.drag-file-area h3 {
+	font-size: 26px;
+	margin: 15px 0;
+    color: #ffffff;
+}
+.drag-file-area label {
+	font-size: 19px;
+}
+.drag-file-area label .browse-files-text {
+	color: #20ff00;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.browse-files p {
+	position: relative;
+	top: -25px;
+    color: #ffffff;
+}
+.default-file-input {
+	opacity: 0;
+}
+.cannot-upload-message {
+	background-color: #ffc6c4;
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	padding: 5px 10px 5px 30px;
+	border-radius: 5px;
+	color: #BB0000;
+	display: none;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.cannot-upload-message span, .upload-button-icon {
+	padding-right: 10px;
+}
+.cannot-upload-message span:last-child {
+	padding-left: 20px;
+	cursor: pointer;
+}
+.file-block {
+	color: #f7fff7;
+	background-color: #7b2cbf;
+  	transition: all 1s;
+	width: 390px;
+	position: relative;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0 15px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.file-info {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.file-icon {
+	margin-right: 10px;
+}
+.file-name, .file-size {
+	padding: 0 3px;
+}
+.remove-file-icon {
+	cursor: pointer;
+}
+.progress-bar {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 4.5%;
+	width: 0;
+	height: 5px;
+	border-radius: 25px;
+	background-color: #4BB543;
+}
+.upload-button {
+	font-family: 'Montserrat';
+	background-color: #7b2cbf;
+	color: #f7fff7;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	border: none;
+	border-radius: 20px;
+	margin: 10px;
+	padding: 7.5px 50px;
+	cursor: pointer;
+}
+
+
+/*  banner end*/
+
+
+/* profile picture box */
+
+.profile-picture-edit-box{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.profile-picture-edit-box label{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.profile-picture-edit-box img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-picture-edit-title-showdown{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: -206px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.684);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* profile picture box  end */
+
+/* <!-- profile full name edit --> */
+
+.profile-fullname-edit-box{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.profile-firstname-edit-box{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.profile-firstname-edit-box input{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+}
+.profile-firstname-edit-box label{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.profile-lastname-edit-box input{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+}
+.profile-lastname-edit-box label{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* <!-- profile full name edit end --> */

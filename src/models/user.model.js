@@ -48,16 +48,26 @@ const userSchema = new mongoose.Schema({
         type: String, 
         maxLength: 255 
     }, // Short bio
-    followers: [{
-        default: [0],
-         type: mongoose.Schema.Types.ObjectId,
-         ref: 'User' 
-        }], // References to other users
-    following: [{ 
-        default: [0],
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User' 
-    }], // References to other users
+    followers:{
+        followerNumber: {
+            type: Number,
+            default: 0
+        },
+        followerBy: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }]
+    },  // References to other users
+    following:{
+        followingNumber: {
+            type: Number,
+            default: 0
+        },
+        followingBy: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }]
+    }, // References to other users
     posts: [{ 
         default: [0],
         type: mongoose.Schema.Types.ObjectId,

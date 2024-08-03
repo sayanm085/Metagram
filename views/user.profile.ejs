@@ -58,13 +58,13 @@
             <div class="profile-main-section">
                 <div class="profile-main-show-box">
                     <!-- profile user Banner -->
-                  <div class="profile-banner">
+                  <!-- <div class="profile-banner">
                         <img src="/uploads/banner.jpg" alt="">
-                    </div>
+                    </div> -->
                    <!-- profile user data  -->
-                   <div class="profile-user-data-box">
+                   <!-- <div class="profile-user-data-box">
                     <!-- profile-img-username-box -->
-                      <div class="profile-img-username-box">
+                      <!-- <div class="profile-img-username-box">
                             <div class="profile-img-box">
                                 <img src="/uploads/1711967051270.jpg" alt="Sayan Mondal">
                             </div>
@@ -72,9 +72,9 @@
                                 <p class="profile-Fullname">Sayan Mondal</p>
                                 <p> @sayanmondal</p>
                             </div>
-                      </div>
+                      </div> -->
                         <!-- profile user post follower media -->
-                      <div class="profile-user-post-follower-media-box">
+                      <!-- <div class="profile-user-post-follower-media-box">
                             <div class="profile-user-post-follower-media">
                                 <div class="profile-user-post-num profile-maindata">
                                     <p>Post</p>
@@ -95,14 +95,11 @@
                             </div>
                       </div> 
                       <!-- profile user edit button -->
-                      <div class="profile-user-edit-story-button">
-                        <button class="profile-edit-btn">Profile Edit 
-                            <svg class="svg" viewBox="0 0 512 512">
-                              <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg>
-                          </button>                          
-                      </div>      
+                      <!-- <div class="profile-user-edit-story-button">
+                        <button class="button">Follow</button>                         
+                      </div>       -->
 
-                </div>
+                <!-- </div> --> 
                     <!-- end -->
                 </div> 
 
@@ -111,7 +108,7 @@
               <div class="profile-all-data-fatch-box">
                 <div class="profile-about-allphoto-video-data-box">
                     <div class="profile-about-data-box">
-                        <div class="profile-about-title">
+                        <!-- <div class="profile-about-title">
                             <p>About Me</p>
                         </div>
                         <div class="profile-about-data">
@@ -131,7 +128,7 @@
                                 <p>Joined</p>
                                 <p>August 2021</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div class="profile-media-div-box">
@@ -200,7 +197,7 @@
                   
                 <!-- profile user all user post data -->
                 <div class="profile-user-allpost-box">
-                        <div class="main-post-box">
+                        <!-- <div class="main-post-box">
                             <div class="main-center-post-box">
                             <div class="main-uploader-name-box">
                             <div class="main-pic-name-box">
@@ -262,7 +259,7 @@
                             </div>
                             </div>
                             </div>
-                        </div>
+                        </div> -->
 
                  
 
@@ -279,18 +276,7 @@
     </main>
 
     
-  <script>
-   let  userid = document.querySelector('.userid').innerText;
-
-   let userdata = async()=>{
-    let res = await fetch(`/userprofile/${userid}`);
-    let data = await res.json();
-    console.log(data);
-
-   }
-   userdata();
-
-  </script>
+    <script type="module" src="/js/userprofile.frontend.js"></script>
  
    
 </body>
