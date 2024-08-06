@@ -119,7 +119,7 @@ app.post('/createpost', upload.single('imgvideofile'), authenticateToken ,async 
                 res.redirect("/home");
             }).catch((err) => {
                 console.log(err);
-                res.send("Error in uploading blog post");
+                res.send("Error in uploading blog Post");
             });
     
 
