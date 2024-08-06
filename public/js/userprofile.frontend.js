@@ -226,7 +226,7 @@ let mainuploaderpic=document.createElement("div")
 mainuploaderpic.classList.add("main-uploader-pic")
 anchormainpicnamebox.appendChild(mainuploaderpic)
 let img=document.createElement("img")
-img.src=`/uploads/1711967051270.jpg`
+img.src=`/uploads/${data.profilePicture}`
 mainuploaderpic.appendChild(img)
 
 
@@ -334,7 +334,7 @@ anchormaincommentuserpicbox.href=`/profile`
 anchormaincommentuserpicbox.classList.add("main-comment-user-pic-box")
 maincommentuserpicbox.appendChild(anchormaincommentuserpicbox)
 let img2=document.createElement("img")
-img2.src=`/uploads/1711967051270.jpg`
+img2.src=`/uploads/${data.profilePicture}`
 anchormaincommentuserpicbox.appendChild(img2)
 
 let maincommentinputbox=document.createElement("div")

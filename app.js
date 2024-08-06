@@ -133,6 +133,39 @@ app.post('/createpost', upload.single('imgvideofile'), authenticateToken ,async 
   });
 
 
+
+app.post("/editprofile", upload.fields([{ name: "profilebanner", maxCount: 1 }, { name: "profilePicture", maxCount: 1 }]), authenticateToken, async (req,res) => {
+
+    const { profilebanner, profilePicture} = req.files;
+    const { fastname, lastname, username, about,contact,location, website } = req.body;
+    const userId = req.user.id;
+
+    try {
+        const user = await User.findById (userId);
+        if (!user) {
+            return res.status(404).send({ error: "User not found" });
+        }
+        if (profilebanner) {
+            user.profilebanner = profilebanner[0].filename;
+        }
+        if (profilePicture) {
+            user.profilePicture = profilePicture[0].filename;
+        }
+        user.fastname = fastname;
+        user.lastname = lastname;
+        user.username = username;
+        user.about = about;
+        user.contact = contact;
+        user.Location = location;
+        user.website = website;
+
+        await user.save();
+        res.redirect("/profile/"+user._id);
+    } catch (error) {
+        console.error("Error editing profile:", error);
+        res.status(500).send({ error: "Internal server error" });
+    }
+});
   
 app.get("/like/:postId", authenticateToken, async (req, res) => {
     const postId = req.params.postId; //fetching the post id
@@ -267,6 +300,15 @@ app.get("/userprofile/:userId", authenticateToken, async (req, res) => {
         res.status(500).send({ error: "Internal server error" });
     }
 });
+
+app.get("/profile-edit/:username", authenticateToken,(req, res) => {
+    res.render("profile.edit.ejs");
+});
+
+
+
+
+
 
 
 

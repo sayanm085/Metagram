@@ -64,7 +64,7 @@ let allpost= async()=>{
     mainuploaderpic.classList.add("main-uploader-pic")
     anchormainpicnamebox.appendChild(mainuploaderpic)
     let img=document.createElement("img")
-    img.src=`/uploads/1711967051270.jpg`
+    img.src=`/uploads/${element.owner.profilePicture}`
     mainuploaderpic.appendChild(img)
 
 

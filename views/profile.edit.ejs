@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/mainpage.css">
-    <link rel="stylesheet" href="../public/css/profile.edit.css">
+    <link rel="stylesheet" href="/css/mainpage.css">
+    <link rel="stylesheet" href="/css/profile.edit.css">
     <script src="https://kit.fontawesome.com/f74ecaf58e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
@@ -37,7 +37,7 @@
 
              <div class="profile-nav-box">
                     <div class="profile-nav">
-                        <img src="../public/uploads/1711967051270.jpg" alt="Sayan Mondal" class="profile-img">
+                        <img src="/uploads/1711967051270.jpg" alt="Sayan Mondal" class="profile-img">
                     </div>
                     <P>Sayan Mondal</P>
                     <i class="fa-solid fa-angle-down"></i>
@@ -60,65 +60,94 @@
             </div>
 
             <div class="profile-edit-form">
-                <form action="/profile/edit" method="POST" enctype="multipart/form-data">
-                     <!-- profile banner edit -->
-                    <div class="profile-banner-edit-box">
-                        <div class="upload-files-container">
-                            <div class="drag-file-area">
-                                <img src="../public/uploads/banner.jpg" alt="">
-                                <span class="material-icons-outlined upload-icon relativ " style="display: none;"> file_upload </span>
-                                <h3 class="dynamic-message relativ"> Drag & drop any file here </h3>
-                                <label class="label relativ">
-                                     <span class="browse-files">
-
-                                         <input type="file" class="default-file-input"/> 
-                                         <p class="browse-files-text">browse file</p>
-                                         <p>from device</p> 
-                                    </span> 
-                                </label>
-                            </div>
-
-
-
-                            <span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a file first <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
-                            <div class="file-block">
-                                <div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span class="file-name"> </span> | <span class="file-size">  </span> </div>
-                                <span class="material-icons remove-file-icon">delete</span>
-                                <div class="progress-bar"> </div>
-                            </div>
-                            <button type="button" style="display: none;" class="upload-button "> Upload </button>
-                        </div>
-
-                        
-                    </div>
+                <form action="/editprofile" method="POST" enctype="multipart/form-data" class="profile-edit-from-box">
+                     <!--* profile banner edit -->
+                    <!-- <div class="profile-banner-edit-box">
+                               
+                            <label for="">
+                              <img src="/uploads/banner.jpg" alt="">
+                              <input type="file" name="profileBanner" style="display: none;">
+                            </label>
+                    </div> -->
                      
-                    <!-- profile picture edit -->
+                    <!--* profile picture edit -->
 
-                    <div class="profile-picture-edit-box">
+                    <!-- <div class="profile-picture-edit-box">
                         <label>
-                            <img src="../public/uploads/1711967051270.jpg" alt="">
+                            <img src="/uploads/1711967051270.jpg" alt="">
                             <input type="file" name="profilePicture" style="display: none;">
                              <div class="profile-picture-edit-title-showdown">
                                 <p>Edits</p>
                              </div>
                         </label>
                         
-                    </div>
+                    </div> -->
 
-                    <!-- profile full name edit -->
-                    <div class="profile-fullname-edit-box">
-                          <!-- profile firstname-->
-                        <div class="profile-firstname-edit-box">
-                            <label for="firstname">First Name</label>
-                            <input type="text" name="firstname" id="firstname" value="Sayan">
+                    <!--*profile full name edit -->
+                  <!-- <div class="profile-fullname-edit-box">
+                          
+
+                        <div class="input-group">
+                          <div>
+                            <label for="fastname">Fastname</label>
+                            <input type="text" name="fastname" id="fastname" placeholder="Fastname">
+                          </div>
                         </div>
-                            <!-- profile lastname-->
-                        <div class="profile-lastname-edit-box">
-                            <label for="lastname">Last Name</label>
-                            <input type="text" name="lastname" id="lastname" value="Mondal">
+                          <div class="input-group">
+                              <div>
+                                  <label for="lastname">Lastname</label>
+                                  <input type="text" name="lastname" id="lastname" placeholder="Lastname" >
+                                </div>
+                          </div>
+                        
+                        <div class="input-group">
+                          <label for="username">Username</label>
+                          <input type="text" name="username" id="username" placeholder="Username" >
+                        </div>
+                        <div class="input-group">
+                          <label for="gander">Gander</label>
+                          <select name="gander" id="gander"  required > 
+                            <option selected >Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <label for="username">Email</label>
+                          <input type="text" name="email" id="email" placeholder="Email" >
                         </div>
 
-                    </div>
+                        <div class="input-group">
+                          <label for="bio">Bio</label>
+                          <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Bio"></textarea>
+
+                         <div class="input-group">
+                            <label for="bio">Bio</label>
+                            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Bio"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="website">Website</label>
+                            <input type="text" name="website" id="website" placeholder="Website" >
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone" id="phone" placeholder="Phone">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" placeholder="Address">
+                        </div>
+
+                        <div class="submit-btn-box-edit">
+                            <button class="submit-btn"  type="submit">Save</button>
+                        </div>
+
+    
+                  </div> --> 
+
+                    
 
                 </form>
             </div>
@@ -131,133 +160,9 @@
 
 
 
-    <script>
-        var isAdvancedUpload = function() {
-  var div = document.createElement('div');
-  return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
-}();
-
-let draggableFileArea = document.querySelector(".drag-file-area");
-let browseFileText = document.querySelector(".browse-files");
-let uploadIcon = document.querySelector(".upload-icon");
-let dragDropText = document.querySelector(".dynamic-message");
-let fileInput = document.querySelector(".default-file-input");
-let cannotUploadMessage = document.querySelector(".cannot-upload-message");
-let cancelAlertButton = document.querySelector(".cancel-alert-button");
-let uploadedFile = document.querySelector(".file-block");
-let fileName = document.querySelector(".file-name");
-let fileSize = document.querySelector(".file-size");
-let progressBar = document.querySelector(".progress-bar");
-let removeFileButton = document.querySelector(".remove-file-icon");
-let uploadButton = document.querySelector(".upload-button");
-let fileFlag = 0;
-
-fileInput.addEventListener("click", () => {
-	fileInput.value = '';
-	console.log(fileInput.value);
-});
-
-fileInput.addEventListener("change", e => {
-	console.log(" > " + fileInput.value)
-	uploadIcon.innerHTML = 'check_circle';
-	dragDropText.innerHTML = 'File Dropped Successfully!';
-	document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: 0;"> browse file</span></span>`;
-	uploadButton.innerHTML = `Upload`;
-	fileName.innerHTML = fileInput.files[0].name;
-	fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
-	uploadedFile.style.cssText = "display: flex;";
-	progressBar.style.width = 0;
-	fileFlag = 0;
-});
-
-uploadButton.addEventListener("click", () => {
-	let isFileUploaded = fileInput.value;
-	if(isFileUploaded != '') {
-		if (fileFlag == 0) {
-    		fileFlag = 1;
-    		var width = 0;
-    		var id = setInterval(frame, 50);
-    		function frame() {
-      			if (width >= 390) {
-        			clearInterval(id);
-					uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
-      			} else {
-        			width += 5;
-        			progressBar.style.width = width + "px";
-      			}
-    		}
-  		}
-	} else {
-		cannotUploadMessage.style.cssText = "display: flex; animation: fadeIn linear 1.5s;";
-	}
-});
-
-cancelAlertButton.addEventListener("click", () => {
-	cannotUploadMessage.style.cssText = "display: none;";
-});
-
-if(isAdvancedUpload) {
-	["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach( evt => 
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-		})
-	);
-
-	["dragover", "dragenter"].forEach( evt => {
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-			uploadIcon.innerHTML = 'file_download';
-			dragDropText.innerHTML = 'Drop your file here!';
-		});
-	});
-
-	draggableFileArea.addEventListener("drop", e => {
-		uploadIcon.innerHTML = 'check_circle';
-		dragDropText.innerHTML = 'File Dropped Successfully!';
-		document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: -23px; left: -20px;"> browse file</span> </span>`;
-		uploadButton.innerHTML = `Upload`;
-		
-		let files = e.dataTransfer.files;
-		fileInput.files = files;
-		console.log(files[0].name + " " + files[0].size);
-		console.log(document.querySelector(".default-file-input").value);
-		fileName.innerHTML = files[0].name;
-		fileSize.innerHTML = (files[0].size/1024).toFixed(1) + " KB";
-		uploadedFile.style.cssText = "display: flex;";
-		progressBar.style.width = 0;
-		fileFlag = 0;
-	});
-}
-
-draggableFileArea.addEventListener("mouseover", () => {
-   document.querySelectorAll(".relativ").forEach( el => {
-      el.style.cssText = "display: block;"  
-   });
-});
-draggableFileArea.addEventListener("mouseout", () => {
-   document.querySelectorAll(".relativ").forEach( el => {
-      el.style.cssText = "display: none;"  
-   });
-});
-
-removeFileButton.addEventListener("click", () => {
-	uploadedFile.style.cssText = "display: none;";
-	fileInput.value = '';
-	uploadIcon.innerHTML = 'file_upload';
-	dragDropText.innerHTML = 'Drag & drop any file here';
-	document.querySelector(".label").innerHTML = ` <span class="browse-files">
-
-                                         <input type="file" class="default-file-input"/> 
-                                         <p class="browse-files-text">browse file</p>
-                                         <p>from device</p> 
-                                    </span> `;
-	uploadButton.innerHTML = `Upload`;
-});
 
 
-    </script>
+    <script type="module" src="/js/profile edit.frontend.js"></script>
     
 </body>
 </html>

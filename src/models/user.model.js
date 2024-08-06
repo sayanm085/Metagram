@@ -78,11 +78,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    about: { 
-        type: String, 
-        maxLength: 255 
-    }, // Short bio
+    
     contact: {
+        type: String,
+        trim: true,
+    },
+
+    website: {
         type: String,
         trim: true,
     },
