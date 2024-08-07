@@ -4,6 +4,11 @@ let profileaboutdatabox=document.querySelector(".profile-about-data-box")
 
 let profileuserallpostbox=document.querySelector(".profile-user-allpost-box")
 
+
+let ownmaineditbox=document.querySelector(".own-main-edit-box")
+let delalartbox=document.querySelector(".del-alart-box")
+let closebtn=document.querySelector(".close-btn")
+
 let usermainprofile= async()=>{
     let response=await fetch("/loginuser")
     let data=await response.json()
@@ -154,8 +159,60 @@ let usermainprofile= async()=>{
 
     let mainthreedotbox=document.createElement("div")
     mainthreedotbox.classList.add("main-three-dot-box")
-    mainthreedotbox.innerHTML=`<i class="fa-solid fa-ellipsis-vertical"></i>`
+  
 
+    let threedoticon= document.createElement("i")
+    threedoticon.classList.add("fa-solid","fa-ellipsis-vertical")
+
+    let mainthreedotmenubox=document.createElement("div")
+    mainthreedotmenubox.classList.add("main-three-dot-menu-box")
+
+    let owneditbtn=document.createElement("div")
+    owneditbtn.classList.add("own-edit-btn","three-dot-menu-btn")
+    owneditbtn.innerHTML=`<i class="fa-regular fa-pen-to-square"></i>
+    <p>Edit</p>`
+
+    let owndeletebtn=document.createElement("div")
+    owndeletebtn.classList.add("own-delete-btn","three-dot-menu-btn")
+    owndeletebtn.innerHTML=`<i class="fa-solid fa-trash"></i>
+    <p>Delete</p>`
+    
+
+
+    owndeletebtn.addEventListener("click",()=>{
+        ownmaineditbox.style.display="flex";
+        delalartbox.style.display="block";
+    });
+
+    closebtn.addEventListener("click",()=>{
+        ownmaineditbox.style.display="none";
+        delalartbox.style.display="none";
+    });
+
+
+
+    let ownsavepostbtn=document.createElement("div")
+    ownsavepostbtn.classList.add("own-savepost-btn","three-dot-menu-btn")
+    ownsavepostbtn.innerHTML=`<i class="fa-regular fa-bookmark"></i>
+    <p>Save Post</p>`
+    
+    let threedot=true;
+    mainthreedotbox.addEventListener("click",()=>{
+      if(threedot){
+        mainthreedotmenubox.style.display="block";
+        threedot=false;
+      }
+      else{
+        mainthreedotmenubox.style.display="none";
+        threedot=true;
+      }
+    });
+
+    mainthreedotmenubox.appendChild(ownsavepostbtn)
+    mainthreedotmenubox.appendChild(owndeletebtn)
+    mainthreedotmenubox.appendChild(owneditbtn)
+    mainthreedotbox.appendChild(mainthreedotmenubox)
+    mainthreedotbox.appendChild(threedoticon)
     mainuploadernamebox.appendChild(mainthreedotbox)
 
     // fast part of mainuploadernamebox end

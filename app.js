@@ -119,7 +119,7 @@ app.post('/createpost', upload.single('imgvideofile'), authenticateToken ,async 
                 res.redirect("/home");
             }).catch((err) => {
                 console.log(err);
-                res.send("Error in uploading blog Post");
+                res.send("Error in uploading blog post");
             });
     
 
@@ -165,6 +165,10 @@ app.post("/editprofile", upload.fields([{ name: "profilebanner", maxCount: 1 }, 
         console.error("Error editing profile:", error);
         res.status(500).send({ error: "Internal server error" });
     }
+});
+
+app.get("/editpost/:postId", authenticateToken, async (req, res) => {
+
 });
   
 app.get("/like/:postId", authenticateToken, async (req, res) => {
