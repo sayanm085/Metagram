@@ -17,7 +17,7 @@ app.use(cors());
 
 
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 // Set the view engine (e.g., EJS, Pug, etc.)
 app.set('view engine', 'ejs');
 // Set the path to the views directory
