@@ -5,7 +5,7 @@ import mataPost from "./src/models/mataPost.model.js";
 import upload from "./src/middleware/multer.js";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-
+import path from "path";
 
 
 let app = express();
@@ -16,7 +16,8 @@ app.use(cors());
 
 
 
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false })); //using the middleware
 app.use(express.static("public") ); //using the middleware
 app.use(cookieParser());
