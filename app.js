@@ -23,7 +23,6 @@ app.set('view engine', 'ejs');
 // Set the path to the views directory
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: false })); //using the middleware
-app.use(express.static("public") ); //using the middleware
 app.use(cookieParser());
 app.use(express.json());
 
